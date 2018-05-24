@@ -11,6 +11,11 @@ class AdTool():
         ctr = self.calc_ctr(imp, click)
         return ctr * cpc * 1000
 
+    def calc_cpa(self, click, cpc, conversion):
+        cvr = self.calc_cvr(click, conversion)
+
+        return cpc / cvr
+
 
 
 imp = 50000 # 30万IMP
@@ -22,6 +27,7 @@ conversion = 2
 adtool = AdTool()
 
 ctr = adtool.calc_ctr(imp, click)
-print("CTC: %f (%.2f%%)" % (ctr, ctr*100))
+print("CTR: %f (%.2f%%)" % (ctr, ctr*100))
 print("eCPM: %f" % adtool.calc_ecpm(imp, click, cpc))
 print("CVR: %f" % adtool.calc_cvr(click, conversion))
+print("CPA: %f" % adtool.calc_cpa(click, cpc, conversion))
