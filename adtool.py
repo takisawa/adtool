@@ -1,3 +1,4 @@
+import logging
 
 class AdTool():
 
@@ -12,6 +13,7 @@ class AdTool():
         return ctr * cpc * 1000
 
     def calc_cpa(self, click, cpc, conversion):
+        logging.warn("called calc_cpa")
         cvr = self.calc_cvr(click, conversion)
 
         return cpc / cvr
