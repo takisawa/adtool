@@ -20,16 +20,16 @@ class AdTool():
 
 
 
-imp = 50000 # 30万IMP
-click = 200
-cpc = 30
-conversion = 2
+if __name__ == '__main__':
+    imp = 50000 # 30万IMP
+    click = 200
+    cpc = 30
+    conversion = 2
 
+    adtool = AdTool()
 
-adtool = AdTool()
-
-ctr = adtool.calc_ctr(imp, click)
-print("CTR: %f (%.2f%%)" % (ctr, ctr*100))
-print("eCPM: %f" % adtool.calc_ecpm(imp, click, cpc))
-print("CVR: %f" % adtool.calc_cvr(click, conversion))
-print("CPA: %f" % adtool.calc_cpa(click, cpc, conversion))
+    ctr = adtool.calc_ctr(imp, click)
+    print("CTR: %f (%.2f%%)" % (ctr, ctr*100))
+    print("eCPM: %f" % adtool.calc_ecpm(imp, click, cpc))
+    print("CVR: %f" % adtool.calc_cvr(click, conversion))
+    print("CPA: %f" % adtool.calc_cpa(click, cpc, conversion))
